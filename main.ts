@@ -4,12 +4,11 @@
  * Created on: October 2024
  * This program lights up trhe LEDs when the distance is <10 or >= 10 cm.
 */
-
-// variable 
+// variable
 let disctanceToObject: number = 0
 let neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 
-// setup 
+// setup
 neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
 neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
@@ -18,7 +17,7 @@ neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
 neopixelStrip.show()
 basic.showIcon(IconNames.Happy)
 
-// find the disctance of the sonar 
+// find the disctance of the sonar
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
     disctanceToObject = sonar.ping(
@@ -27,7 +26,7 @@ input.onButtonPressed(Button.A, function () {
         PingUnit.Centimeters
     )
 
-    // Red Light 
+    // Red Light
     if (disctanceToObject < 10) {
         neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
         neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
@@ -46,7 +45,7 @@ input.onButtonPressed(Button.A, function () {
 
     }
 
-    // green light 
+    // green light
     basic.pause(2000)
     neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
     neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
