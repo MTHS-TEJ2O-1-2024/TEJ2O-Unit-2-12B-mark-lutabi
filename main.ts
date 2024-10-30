@@ -26,7 +26,7 @@ input.onButtonPressed(Button.A, function () {
         PingUnit.Centimeters
     )
 
-    // Red Light
+    // red Light
     if (disctanceToObject < 10) {
         neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
         neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
@@ -35,6 +35,8 @@ input.onButtonPressed(Button.A, function () {
         neopixelStrip.show()
         basic.showString(disctanceToObject + 'cm')
     } else {
+
+        // green light
         disctanceToObject >= 10
         neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
         neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
@@ -45,7 +47,6 @@ input.onButtonPressed(Button.A, function () {
 
     }
 
-    // green light
     basic.pause(2000)
     neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
     neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
